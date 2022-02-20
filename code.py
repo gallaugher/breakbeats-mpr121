@@ -16,11 +16,21 @@ except ImportError:
         print("This board does not support AudioOut")
         pass # Not all boards can play audio with AudioOut
 
-# Uncomment below if using a board other than the CircuitPlayground Bluefruit
-# and be sure the board's pin is set to pin attached to tip of your RCA audio jack
+# set up I2C
+i2c = board.I2C()
+# if using a QT Py RP2040, comment out line above & uncomment lines below
+#import busio
+#i2c = busio.I2C(board.SCL1, board.SDA1)
+
+# set up touchpads
+touch_pad = adafruit_mpr121.MPR121(i2c)
+
+# Coment below if using the CircuitPlayground Bluefruit
+# and be sure the board's pin is set to pin attached to tip of your RCA audio jack.
+# Modify pin # as needed, for example. board.A0 for a QT Py RP2040
 audio = AudioOut(board.D3)
 
-# Comment the 4 lines below of you're NOT using a CircuitPlayground Bluefruit
+# Uncomment the 4 lines below of you're using a CircuitPlayground Bluefruit
 # speaker = digitalio.DigitalInOut(board.SPEAKER_ENABLE)
 # speaker.direction = digitalio.Direction.OUTPUT
 # speaker.value = True
@@ -54,9 +64,6 @@ for i in range(len(beats)):
     mixer.voice[i].level = 0.0
 
 time.sleep(1.0)  # let drums play a bit
-
-i2c = board.I2C()
-touch_pad = adafruit_mpr121.MPR121(i2c)
 
 while True:
     touched = False
