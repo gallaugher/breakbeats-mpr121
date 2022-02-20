@@ -62,7 +62,7 @@ while True:
     touched = False
     for i in range(len(beats)):
         if touch_pad[i].value:
-            print("You touched pad # {}!".format(i))
+            print(f"You touched pad # {i}!")
             mixer.voice[i].level = 1.0
         else:
             mixer.voice[i].level = 0.0
