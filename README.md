@@ -6,3 +6,13 @@ Check out his repo for some slick code examples at: https://github.com/todbot/ci
 
 My example uses an Arduino Nano RP2040 Connect wired as below:
 <img width="721" alt="wiring-for-arduino-nano-rp2040" src="https://user-images.githubusercontent.com/20801687/154826736-339f519d-eb4a-4cdc-a673-c53346ff3e03.png">
+
+BUT I've had problems running on RP2040 processors (also tried on a QT Py RP2040). I found Mu regularly dropped the board & then the board couldn't connect as CIRCUITPY, so I had to do a complete re-install of CircuitPython to get things working again. Frustrating.
+
+I had much mroe reliable success with a CircuitPlayground Bluefruit.
+See comments in code for minor changes.
+For wiring for the CPB, connect I2C of STEMMA-QT cabling as follows:
+- Black to GND
+- Red to 3.3v (not VOUT)
+- Blue to A5 (also labeled SDA)
+- Yellow to A4 (also labeled SCL)
