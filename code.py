@@ -18,8 +18,8 @@ except ImportError:
 
 # set up I2C
 i2c = board.I2C()
-# if using a QT Py RP2040, comment out line above & uncomment lines below
-#import busio
+# if using a QT Py RP2040, comment out line above & uncomment lines below 
+# AND add , busio to the import line at the start of the code.
 #i2c = busio.I2C(board.SCL1, board.SDA1)
 
 # set up touchpads
