@@ -18,7 +18,7 @@ except ImportError:
 
 # set up I2C
 i2c = board.I2C()
-# if using a QT Py RP2040, comment out line above & uncomment lines below 
+# if using a QT Py RP2040, comment out line above & uncomment line below 
 # AND add , busio to the import line at the start of the code.
 #i2c = busio.I2C(board.SCL1, board.SDA1)
 
