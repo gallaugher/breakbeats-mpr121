@@ -66,7 +66,6 @@ for i in range(len(beats)):
 time.sleep(1.0)  # let drums play a bit
 
 while True:
-    touched = False
     for i in range(len(beats)):
         if touch_pad[i].value:
             print(f"You touched pad # {i}!")
