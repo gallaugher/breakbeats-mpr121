@@ -5,8 +5,8 @@
 # adafruit_mpr121 mixing support. Sorry if I butchered your code, Tod.
 
 import time, board, audiocore, audiomixer, adafruit_mpr121, digitalio
-#from audiopwmio import PWMAudioOut as AudioOut  # for RP2040 etc
-#from audioio import AudioOut as AudioOut  # for SAMD51/M4 etc
+
+# import the proper AudioOut or PWMAudioOut & name it AudioOut
 try:
     from audioio import AudioOut
 except ImportError:
@@ -16,10 +16,11 @@ except ImportError:
         print("This board does not support AudioOut")
         pass # Not all boards can play audio with AudioOut
 
-# configure AudioOut & set path where sounds can be found
+# Uncomment below if using a board other than the CircuitPlayground Bluefruit
+# and be sure the board's pin is set to pin attached to tip of your RCA audio jack
 audio = AudioOut(board.D3)
 
-# if using a CircuitPlayground Bluefruit, uncomment lines below & comment out line above
+# Comment the 4 lines below of you're NOT using a CircuitPlayground Bluefruit
 # speaker = digitalio.DigitalInOut(board.SPEAKER_ENABLE)
 # speaker.direction = digitalio.Direction.OUTPUT
 # speaker.value = True
@@ -48,7 +49,6 @@ mixer = audiomixer.Mixer(voice_count=num_voices, sample_rate=22050, channel_coun
 audio.play(mixer)
 
 for i in range(len(beats)):
-    print(i)
     wave = audiocore.WaveFile(open(path+beats[i],"rb"))
     mixer.voice[i].play(wave, loop=True )
     mixer.voice[i].level = 0.0
