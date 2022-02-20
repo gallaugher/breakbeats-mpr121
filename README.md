@@ -16,3 +16,8 @@ For wiring for the CPB, connect I2C of STEMMA-QT cabling as follows:
 - Red to 3.3v (not VOUT)
 - Blue to A5 (also labeled SDA)
 - Yellow to A4 (also labeled SCL)
+
+Clip two alligator clips to the RCA jack as shown above.
+- Sleeve base of RCA jack should connect to pad GND
+- Tip of RCA jack should connect to AUDIO
+Assumption is that you're using a speaker that has separate power. I used a Hamburger-style speaker that you can get from Amazon, Walmart, or SparkFun.
