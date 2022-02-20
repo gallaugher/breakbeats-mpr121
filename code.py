@@ -19,16 +19,18 @@ except ImportError:
 # configure AudioOut & set path where sounds can be found
 audio = AudioOut(board.D3)
 
-beats = ["ohohoh2.wav",
-        "amenfull_22k_s16.wav",
-        "amen8_22k_s16.wav",
-        "amen7_22k_s16.wav",
+beats = ["amenfull_22k_s16.wav",
         "amen6_22k_s16.wav",
-        "amen5_22k_s16.wav",
-        "amen4_22k_s16.wav",
-        "amen3_22k_s16.wav",
-        "amen2_22k_s16.wav",
-        "amen1_22k_s16.wav"]
+        "amen7_22k_s16.wav",
+        "ohohoh2.wav",
+        "bass_hit_c.wav",
+        "bd_tek.wav",
+        "bd_zome.wav",
+        "drum_cowbell.wav",
+        "duck-scratch.wav",
+        "yo.wav",
+        "watch-this.wav",
+        "freakie-freak.wav"]
 
 path = "beats/"
 
