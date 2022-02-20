@@ -4,7 +4,7 @@
 # Modified (probably poorly) by Prof. John Gallaugher to include
 # adafruit_mpr121 mixing support. Sorry if I butchered your code, Tod.
 
-import time, board, audiocore, audiomixer, adafruit_mpr121
+import time, board, audiocore, audiomixer, adafruit_mpr121, digitalio
 #from audiopwmio import PWMAudioOut as AudioOut  # for RP2040 etc
 #from audioio import AudioOut as AudioOut  # for SAMD51/M4 etc
 try:
@@ -18,6 +18,12 @@ except ImportError:
 
 # configure AudioOut & set path where sounds can be found
 audio = AudioOut(board.D3)
+
+# if using a CircuitPlayground Bluefruit, uncomment lines below & comment out line above
+# speaker = digitalio.DigitalInOut(board.SPEAKER_ENABLE)
+# speaker.direction = digitalio.Direction.OUTPUT
+# speaker.value = True
+# audio = AudioOut(board.SPEAKER)
 
 beats = ["amenfull_22k_s16.wav",
         "amen6_22k_s16.wav",
