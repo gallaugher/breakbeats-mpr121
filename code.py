@@ -3,7 +3,7 @@
 # 9 Feb 2022 - @todbot / Tod Kurt
 # Modified (probably poorly) by Prof. John Gallaugher to include
 # adafruit_mpr121 mixing support. Sorry if I butchered your code, Tod.
-
+# Also import busio below if you're using a QT Py RP2040
 import time, board, audiocore, audiomixer, adafruit_mpr121, digitalio
 
 # import the proper AudioOut or PWMAudioOut & name it AudioOut
